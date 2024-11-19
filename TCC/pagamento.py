@@ -12,7 +12,6 @@ def gerar_link_pagamento():
     request_options.custom_headers = {
         'x-idempotency-key': '<SOME_UNIQUE_VALUE>'
     }
-
     payment_data = {
         "items": [
             #Produto1 -------------------------
@@ -25,9 +24,7 @@ def gerar_link_pagamento():
             }
         ],
         "auto_return:": "all"
-    }
-    
-        
+    }    
     result = sdk.preference().create(payment_data, request_options)
     payment = result["response"]
     link_iniciar_pagamento = payment['init_point']
@@ -63,7 +60,7 @@ while True:
         break
     if event == "PAGAR":
         link = gerar_link_pagamento()
-        sg.popup("Redirecionando para o pagamento...", auto_close=True)
+        sg.popup("Redirecionando para o pagamento...")
         webbrowser.open(link)
 
 window.close()
