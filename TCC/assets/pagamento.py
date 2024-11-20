@@ -1,5 +1,3 @@
-
-
 import mercadopago
 import PySimpleGUI as sg
 import webbrowser
@@ -24,7 +22,12 @@ def gerar_link_pagamento():
                 "unit_price": 49.99
             }
         ],
-        "auto_return:": "all"
+        "back_urls": {
+            "success": "http://127.0.0.1:5000/compracerta",
+            "failure": "http://127.0.0.1:5000/compraerrada",
+            "pending": "http://127.0.0.1:5000/compraerrada",
+        },
+        "auto_return": "approved"
     }
     
         
@@ -33,6 +36,7 @@ def gerar_link_pagamento():
     link_iniciar_pagamento = payment['init_point']
     print(payment)
     return link_iniciar_pagamento
+
 
 
 
