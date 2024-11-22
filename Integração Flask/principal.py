@@ -2,7 +2,7 @@ import threading
 import time
 from flask import Flask, render_template
 import PySimpleGUI as sg
-from teste import gerar_link_pagamento
+from link_de_pagamento import gerar_link_pagamento
 
 app = Flask(__name__)
 

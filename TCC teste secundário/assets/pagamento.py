@@ -3,6 +3,8 @@ import PySimpleGUI as sg
 import webbrowser
 
 
+
+
 def gerar_link_pagamento():
     sdk = mercadopago.SDK("APP_USR-875399821833975-111822-d83e217e7f2d9cc31574a794c030b41f-2107004610")
 
@@ -27,7 +29,7 @@ def gerar_link_pagamento():
             "failure": "http://127.0.0.1:5000/compraerrada",
             "pending": "http://127.0.0.1:5000/compraerrada",
         },
-        "auto_return": "approved"
+        "auto_return": "all"
     }
     
         
